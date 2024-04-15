@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA - Эколог</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: url('list.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    padding: 1% 3%;
+    gap: 20px;
+  }
+
+  .top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo, .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 5rem;
+    letter-spacing: 15px;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  .scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-indicator p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 3rem; 
+      letter-spacing: 8px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      font-size: 0.75rem; 
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 1% 5%;
+    }
+
+    .top-menu {
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-size: 2rem;
+      letter-spacing: 3px;
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      margin-left: 0.5rem; 
+      font-size: 0.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-menu">
+    <div class="logo">
+      AU RA
+    </div>
+    <div class="nav-links">
+      <a href="#">Проекты</a>
+      <a href="#">Контакт</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1 class="title">AURA</h1>
+    <p class="subtitle">Эколог</p>
+  </div>
+
+  <div class="scroll-indicator">
+    <p>Прокрутите</p>
+  </div>
+</div>
+
+</body>
+</html>

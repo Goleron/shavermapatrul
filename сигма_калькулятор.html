@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Простой калькулятор</title>
+    <style>
+        input, button {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Простой калькулятор</h1>
+    <form id="calculator">
+        <input type="text" id="firstNumber" placeholder="Введите первое число">
+        <input type="text" id="secondNumber" placeholder="Введите второе число">
+        <select id="operation">
+            <option value="plus">Сложить</option>
+            <option value="minus">Вычесть</option>
+            <option value="umnoz">Умножить</option>
+            <option value="delen">Разделить</option>
+        </select>
+        <button type="button" onclick="performCalculation()">Вычислить</button>
+    </form>
+    <h2>Результат: <span id="result">?</span></h2>
+
+    <script>
+        function performCalculation() {
+            var firstNum = parseFloat(document.getElementById('firstNumber').value);
+            var secondNum = parseFloat(document.getElementById('secondNumber').value);
+            var operation = document.getElementById('operation').value;
+            var result;
+
+            if (isNaN(firstNum) || isNaN(secondNum)) {
+                alert('Пожалуйста, введите корректные числа.');
+                return;
+            }
+
+            switch (operation) {
+                case 'plus':
+                    result = firstNum + secondNum;
+                    break;
+                case 'minus':
+                    result = firstNum - secondNum;
+                    break;
+                case 'umnoz':
+                    result = firstNum * secondNum;
+                    break;
+                case 'delen':
+                    if (secondNum !== 0) {
+                        result = firstNum / secondNum;
+                    } else {
+                        alert('Деление на ноль невозможно.');
+                        return;
+                    }
+                    break;
+                default:
+                    result = 'Неизвестная операция';
+            }
+
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
